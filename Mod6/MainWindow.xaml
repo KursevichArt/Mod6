@@ -1,0 +1,24 @@
+﻿<Window x:Class="Mod6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Библиотека" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="189*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="SearchTextBox" Width="200" Height="30" Margin="10,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" KeyDown="SearchTextBox_KeyDown" Grid.ColumnSpan="2" />
+        <Button Content="Поиск" Width="100" Height="30" Margin="176,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Click="SearchButton_Click" Grid.Column="1"/>
+
+        <DataGrid x:Name="BooksDataGrid" Margin="10,50,10,80" AutoGenerateColumns="False" IsReadOnly="True" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" />
+                <DataGridTextColumn Header="Название" Binding="{Binding Title}" Width="200" />
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}" Width="150" />
+                <DataGridTextColumn Header="Наличие" Binding="{Binding Available}" Width="100" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Арендовать" Width="100" Height="30" Margin="10,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="RentButton_Click" Grid.ColumnSpan="2" />
+    </Grid>
+</Window>
